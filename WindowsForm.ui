@@ -7,51 +7,28 @@
     <x>0</x>
     <y>0</y>
     <width>423</width>
-    <height>703</height>
+    <height>484</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="addr_to">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>190</y>
-      <width>231</width>
-      <height>21</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="msg_subj">
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>430</y>
+      <y>220</y>
       <width>231</width>
       <height>20</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>190</y>
-      <width>101</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Адрес получателя</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>430</y>
+      <y>220</y>
       <width>47</width>
       <height>14</height>
      </rect>
@@ -64,7 +41,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>480</y>
+      <y>270</y>
       <width>91</width>
       <height>20</height>
      </rect>
@@ -77,7 +54,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>630</y>
+      <y>420</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -142,7 +119,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>480</y>
+      <y>270</y>
       <width>231</width>
       <height>111</height>
      </rect>
@@ -171,8 +148,8 @@
    <widget class="QPushButton" name="choose_file">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>240</y>
+      <x>130</x>
+      <y>180</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -184,73 +161,14 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>240</y>
+      <x>40</x>
+      <y>180</y>
       <width>81</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Выбрать файл</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>290</y>
-      <width>361</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="palette">
-     <palette>
-      <active>
-       <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
-        </brush>
-       </colorrole>
-      </active>
-      <inactive>
-       <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
-        </brush>
-       </colorrole>
-      </inactive>
-      <disabled>
-       <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
-        </brush>
-       </colorrole>
-      </disabled>
-     </palette>
-    </property>
-    <property name="autoFillBackground">
-     <bool>true</bool>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-    </property>
-    <property name="wordWrap">
-     <bool>true</bool>
+     <string>CSV файл</string>
     </property>
    </widget>
   </widget>

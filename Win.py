@@ -1,3 +1,4 @@
+import csv
 import mimetypes
 import os.path
 import smtplib
@@ -28,18 +29,25 @@ class Win(QMainWindow):
 
     def sendmail(self):
         try:
-            msg = MIMEMultipart()
-            msg['From'] = self.ui.addr_from.text()
-            msg['To'] = self.ui.addr_to.text()
-            msg['Subject'] = Header(self.ui.msg_subj.text(), 'utf-8')
-            msg.attach(MIMEText(self.ui.msg_text.toPlainText(), 'plain', 'utf-8'))
-            if hasattr(self, 'path') or len(self.ui.path) != 0:
-                self.process_attachment(msg, self.ui.path)
-
-            server = self.choose_server()
-            server.login(self.ui.addr_from.text(), self.ui.msg_password.text())
-            server.sendmail(self.ui.addr_from.text(), [self.ui.addr_to.text()], msg.as_string())
-            server.quit()
+            if hasattr(self, 'path'):
+                with open(self.ui.path, mode='r') as file:
+                    csvfile = csv.reader(file)
+                    for lines in csvfile:
+                        print(lines)
+                        row = lines[0].split(";")
+                        msg = MIMEMultipart()
+                        addr_to = row[0]
+                        msg['From'] = self.ui.addr_from.text()
+                        msg['To'] = addr_to
+                        del row[0]
+                        if len(row) > 1:
+                            self.process_attachment(msg, row)
+                        msg['Subject'] = Header(self.ui.msg_subj.text(), 'utf-8')
+                        msg.attach(MIMEText(self.ui.msg_text.toPlainText(), 'plain', 'utf-8'))
+                        server = self.choose_server()
+                        server.login(self.ui.addr_from.text(), self.ui.msg_password.text())
+                        server.sendmail(self.ui.addr_from.text(), addr_to, msg.as_string())
+                        server.quit()
         except Exception as err:
             print(err)
 
@@ -51,15 +59,15 @@ class Win(QMainWindow):
         return server
 
     def open_file(self):
-        filename = QFileDialog.getOpenFileNames(
+        filename = QFileDialog.getOpenFileName(
             self,
             'choose_file',
             '.',
-            'AllFiles (*)'
+            'csv (*.csv)'
         )
+        print(filename)
         if filename:
             self.ui.path = filename[0]
-            self.ui.label_7.setText('\n'.join(filename[0]) )
 
 
     def process_attachment(self, msg, files):
