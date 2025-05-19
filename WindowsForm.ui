@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>423</width>
+    <width>554</width>
     <height>356</height>
    </rect>
   </property>
@@ -14,62 +14,55 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="calculate_button">
+   <widget class="QPushButton" name="save_button">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>230</y>
+      <x>10</x>
+      <y>70</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Результат</string>
+     <string>Сохранить</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QPushButton" name="open_button">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>71</width>
-      <height>16</height>
+      <x>450</x>
+      <y>70</y>
+      <width>75</width>
+      <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Ввод</string>
+     <string>Открыть</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="input_form">
+   <widget class="QTextBrowser" name="edit">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>40</y>
-      <width>231</width>
-      <height>21</height>
+      <x>10</x>
+      <y>100</y>
+      <width>531</width>
+      <height>192</height>
      </rect>
     </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="openExternalLinks">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="file_label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>71</width>
+      <x>310</x>
+      <y>70</y>
+      <width>131</width>
       <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Результат</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="result_label">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>120</y>
-      <width>121</width>
-      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -82,7 +75,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>423</width>
+     <width>554</width>
      <height>21</height>
     </rect>
    </property>

@@ -1,66 +1,5 @@
-import csv
-from email.header import Header
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-
 from PyQt5 import QtCore,QtGui,uic
 from PyQt5.QtWidgets import QMainWindow, QFileDialog
-
-
-def evaluate_expression(expression):
-    def precedence(op):
-        if op in ('+', '-'):
-            return 1
-        if op in ('*', '/'):
-            return 2
-        return 0
-
-    def apply_operator(operators, values):
-        right = values.pop()
-        left = values.pop()
-        op = operators.pop()
-        if op == '+':
-            values.append(left + right)
-        elif op == '-':
-            values.append(left - right)
-        elif op == '*':
-            values.append(left * right)
-        elif op == '/':
-            values.append(left / right)
-
-    def parse(tokens):
-        values = []
-        operators = []
-        i = 0
-        while i < len(tokens):
-            if tokens[i] == ' ':
-                i += 1
-                continue
-            if tokens[i] == '(':
-                operators.append(tokens[i])
-            elif tokens[i].isdigit() or tokens[i] == '.':
-                num = ''
-                while (i < len(tokens) and (tokens[i].isdigit() or tokens[i] == '.')):
-                    num += tokens[i]
-                    i += 1
-                values.append(float(num))
-                continue
-            elif tokens[i] == ')':
-                while operators and operators[-1] != '(':
-                    apply_operator(operators, values)
-                operators.pop()  # Remove '('
-            elif tokens[i] in '+-*/':
-                while (operators and precedence(operators[-1]) >= precedence(tokens[i])):
-                    apply_operator(operators, values)
-                operators.append(tokens[i])
-            i += 1
-
-        while operators:
-            apply_operator(operators, values)
-        return values[0]
-
-    return parse(expression)
-
 
 class Win(QMainWindow):
 
@@ -70,11 +9,22 @@ class Win(QMainWindow):
         self.listener()
 
     def listener(self):
-        self.ui.calculate_button.clicked.connect(self.calculate)
+        self.ui.save_button.clicked.connect(self.save_file)
+        self.ui.open_button.clicked.connect(self.open_file)
 
-    def calculate(self):
-        expression = self.ui.input_form.text()
-        print(expression)
-        result = evaluate_expression(expression)
-        print(result)
-        self.ui.result_label.setText(str(result))
+
+    def save_file(self):
+        filepath = self.ui.file_label.text()
+        with open(filepath, 'w') as fp:
+            fp.write(self.edit.toPlainText())
+            fp.close()
+
+    def open_file(self):
+        filepath, _filter = QFileDialog.getOpenFileName(None, u'Открыть файл', "./", filter='text (*.txt)')
+        if not filepath:
+            self.ui.file_label.setText('Файл не найден')
+            return
+        self.ui.file_label.setText(filepath)
+        with open(filepath) as fp:
+            self.ui.edit.setPlainText(fp.read())
+            fp.close()
