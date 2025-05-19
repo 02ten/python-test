@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>356</height>
+    <width>1116</width>
+    <height>592</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,35 +17,22 @@
    <widget class="QPushButton" name="save_button">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>70</y>
+      <x>20</x>
+      <y>220</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Сохранить</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="open_button">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>70</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Открыть</string>
+     <string>Отправить</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="edit">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>100</y>
-      <width>531</width>
+      <x>20</x>
+      <y>20</y>
+      <width>921</width>
       <height>192</height>
      </rect>
     </property>
@@ -56,17 +43,33 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="file_label">
+   <widget class="QTextBrowser" name="edit_2">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>70</y>
-      <width>131</width>
-      <height>16</height>
+      <x>540</x>
+      <y>290</y>
+      <width>421</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="openExternalLinks">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sql_label_error">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>270</y>
+      <width>47</width>
+      <height>13</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Ошибки</string>
     </property>
    </widget>
   </widget>
@@ -75,7 +78,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>554</width>
+     <width>1116</width>
      <height>21</height>
     </rect>
    </property>
