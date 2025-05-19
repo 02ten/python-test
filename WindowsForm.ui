@@ -7,168 +7,73 @@
     <x>0</x>
     <y>0</y>
     <width>423</width>
-    <height>484</height>
+    <height>356</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="msg_subj">
+   <widget class="QPushButton" name="calculate_button">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>220</y>
-      <width>231</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>220</y>
-      <width>47</width>
-      <height>14</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Тема</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>270</y>
-      <width>91</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Текст отправки</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="send_mail">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>420</y>
+      <x>190</x>
+      <y>230</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Отправить</string>
+     <string>Результат</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>100</y>
+      <x>30</x>
+      <y>40</y>
       <width>71</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Отправитель</string>
+     <string>Ввод</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="addr_from">
+   <widget class="QLineEdit" name="input_form">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>100</y>
+      <x>120</x>
+      <y>40</y>
       <width>231</width>
       <height>21</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="msg_password">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>140</y>
-      <width>231</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
-    </property>
-    <property name="dragEnabled">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>140</y>
-      <width>47</width>
-      <height>14</height>
+      <x>20</x>
+      <y>130</y>
+      <width>71</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Пароль</string>
+     <string>Результат</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="msg_text">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>270</y>
-      <width>231</width>
-      <height>111</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="server">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>50</y>
-      <width>181</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>yandex</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>mail</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QPushButton" name="choose_file">
+   <widget class="QLabel" name="result_label">
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>180</y>
-      <width>75</width>
-      <height>23</height>
+      <y>120</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Открыть</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>180</y>
-      <width>81</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>CSV файл</string>
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>
